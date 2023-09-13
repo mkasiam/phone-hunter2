@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Link with daisy UI and tailwind css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Hunter 2</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold text-center">
+          Phone Hunter 2
+        </h1>
+      </div>
+      <div
+        class="flex justify-center flex-col md:flex-row lg:flex-row mb-4 md:mb-0 lg:mb-0 my-7 gap-4"
+      >
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search here..."
+          class="input input-bordered input-primary w-full max-w-xs"
+        />
+        <button
+          onclick="searchHandler()"
+          id="serachButtton"
+          class="btn btn-info"
+        >
+          Search
+        </button>
+      </div>
+    </header>
+    <main>
+      <!-- Loading Spinner -->
+      <div
+        id="loadingSpinner"
+        class="hidden flex justify-center mt-10 md:mt-20 lg:mt-40"
+      >
+        <span class="loading loading-spinner loading-md"></span>
+      </div>
+      <!-- Section for showing card from the server -->
+      <section class="container mx-auto">
+        <div
+          id="phone-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        ></div>
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog
+          id="show_details"
+          class="modal modal-bottom sm:modal-middle"
+        ></dialog>
+        <!-- Show All Button -->
+        <div id="showAllContainer" class="hidden flex justify-center my-7">
+          <button
+            onclick="showAllHandler()"
+            id="showAllButton"
+            class="btn btn-info"
+          >
+            Show All
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
